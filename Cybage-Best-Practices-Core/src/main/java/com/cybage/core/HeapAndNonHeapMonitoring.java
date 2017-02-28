@@ -73,11 +73,11 @@ private static JMXConnector connector;
 				Long max = (Long) dataSenders.get("max");
 				Long used = (Long) dataSenders.get("used");
 				Long percentage = ((used * 100) / max);
-				System.out.println("nnt commited   : "+commited/(1024*1024)+" MB");
-				System.out.println("t init       : "+init/(1024*1024)+" MB");
-				System.out.println("t max        : "+max/(1024*1024)+" MB");
-				System.out.println("t used       : "+used/(1024*1024)+" MB");
-				System.out.println("t percentage : "+percentage +" %");
+				System.out.println("\t commited   : "+commited/(1024*1024)+" MB");
+				System.out.println("\t init       : "+init/(1024*1024)+" MB");
+				System.out.println("\t max        : "+max/(1024*1024)+" MB");
+				System.out.println("\t used       : "+used/(1024*1024)+" MB");
+				System.out.println("\t percentage : "+percentage +" %");
 			}
 	}
  
