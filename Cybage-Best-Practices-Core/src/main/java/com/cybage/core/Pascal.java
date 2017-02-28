@@ -6,7 +6,7 @@ class Pascal {
 	public static void main(String[] args) {
 		int bin, p, q, r, x;
 		Scanner s = new Scanner(System.in);
-		System.out.println(" Enter number of rows: ");
+		System.out.println("Please Enter number of rows: ");
 		r = s.nextInt();
 		bin = 1;
 		q = 0;
