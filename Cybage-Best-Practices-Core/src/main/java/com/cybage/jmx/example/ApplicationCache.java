@@ -6,6 +6,8 @@ import java.util.List;
 public class ApplicationCache implements ApplicationCacheMBean{
  
 	private int maxCacheSize = 100;
+
+	@SuppressWarnings("rawtypes")
 	private List cache = new ArrayList();
 	
 	public synchronized void clearCache() {
