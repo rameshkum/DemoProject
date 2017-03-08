@@ -10,8 +10,8 @@ import javax.management.NotCompliantMBeanException;
 import javax.management.ObjectName;
 
 public class SystemConfigManagement {
-    private static final int DEFAULT_NO_THREADS=10;
-    private static final String DEFAULT_SCHEMA="default";
+    private static  int DEFAULT_NO_THREADS=10;
+    private static  String DEFAULT_SCHEMA="default";
 
     public static void main(String[] args) throws MalformedObjectNameException, InterruptedException, InstanceAlreadyExistsException, MBeanRegistrationException, NotCompliantMBeanException {
         //Get the MBean server
@@ -21,6 +21,9 @@ public class SystemConfigManagement {
         ObjectName name = new ObjectName("com.cybage.jmx:type=SystemConfig");
         mbs.registerMBean(mBean, name);
         do{
+        	
+        	DEFAULT_NO_THREADS++;
+        	
             Thread.sleep(3000);
             System.out.println("Thread Count="+mBean.getThreadCount()+":::Schema Name="+mBean.getSchemaName());
         }while(mBean.getThreadCount() !=0);

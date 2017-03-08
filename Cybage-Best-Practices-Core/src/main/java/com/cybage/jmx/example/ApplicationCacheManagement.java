@@ -8,7 +8,7 @@ public class ApplicationCacheManagement {
 	public static void main(String[] args) throws Exception {
 		ApplicationCache cache = new ApplicationCache();
 		MBeanServer mbs = ManagementFactory.getPlatformMBeanServer();
-		ObjectName name = new ObjectName("com.cybage.jmx.example:type=ApplicationCacheMBean");		
+		ObjectName name = new ObjectName("com.cybage.jmx.example:type=ApplicationCacheMBean");
 		mbs.registerMBean(cache, name);
 		Thread t1 = new Thread(){ public void run(){
 			System.out.println("Deamon thread called");
