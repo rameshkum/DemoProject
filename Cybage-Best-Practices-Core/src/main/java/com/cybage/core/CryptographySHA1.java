@@ -36,6 +36,8 @@ public class CryptographySHA1 {
 
 	        MessageDigest cript = null;
 			try {
+/*				cript = MessageDigest.getInstance("MD5");
+				cript = MessageDigest.getInstance("SHA");*/
 				cript = MessageDigest.getInstance("SHA-1");
 			} catch (NoSuchAlgorithmException e) {
 				e.printStackTrace();
@@ -43,7 +45,8 @@ public class CryptographySHA1 {
 	        cript.reset();
 
 	        try {
-				cript.update(sStringToHash.getBytes("utf-8"));
+				cript.update(sStringToHash.getBytes("UTF-8"));
+//				cript.update(sStringToHash.getBytes("ASCII"));
 			} catch (UnsupportedEncodingException e) {
 				e.printStackTrace();
 			}
