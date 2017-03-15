@@ -21,11 +21,10 @@ public class SystemConfigManagement {
         ObjectName name = new ObjectName("com.cybage.jmx:type=SystemConfig");
         mbs.registerMBean(mBean, name);
         do{
-        	
 /*        	DEFAULT_NO_THREADS++;*/        	
             Thread.sleep(3000);
 /*            System.out.println("Thread Count="+mBean.getThreadCount()+":::Schema Name="+mBean.getSchemaName());*/
-            System.out.println("Thread Count="+	(DEFAULT_NO_THREADS++) +":::Schema Name="+mBean.getSchemaName());
+            System.out.println("Thread Count="+	(DEFAULT_NO_THREADS++) +"::: Schema Name="+mBean.getSchemaName());
         }while(mBean.getThreadCount() !=0);
         
     }
