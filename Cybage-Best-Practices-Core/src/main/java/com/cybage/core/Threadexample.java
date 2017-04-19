@@ -15,7 +15,7 @@ public class Threadexample
     // Function called by producer thread
     public void produce() throws InterruptedException
     {
-        int value = 0;
+        int value = 1;
         while (true)
         {
             synchronized (this)
@@ -25,8 +25,7 @@ public class Threadexample
                 while (list.size()==capacity){
                     wait();
                 }
-                System.out.println("Producer produced-"
-                                              + value);
+                System.out.println("Producer produced-" + value);
                 // to insert the jobs in the list
                 list.add(value++);
 
@@ -55,8 +54,7 @@ public class Threadexample
                 //to retrive the ifrst job in the list
                 int val = list.removeFirst();
 
-                System.out.println("Consumer consumed-"
-                                                + val);
+                System.out.println("Consumer consumed-" + val);
 
                 // Wake up producer thread
                 notify();
@@ -67,25 +65,18 @@ public class Threadexample
         }
     }
 	
-    public static void main(String[] args)
-                        throws InterruptedException
-    {
+    public static void main(String[] args) throws InterruptedException {
         // Object of a class that has both produce()
         // and consume() methods
         final Threadexample pc = new Threadexample();
  
         // Create producer thread
-        Thread t1 = new Thread(new Runnable()
-        {
-
-            public void run()
-            {
-                try
-                {
+        Thread t1 = new Thread(new Runnable(){
+            public void run(){
+                try{
                     pc.produce();
                 }
-                catch(InterruptedException e)
-                {
+                catch(InterruptedException e){
                     e.printStackTrace();
                 }
             }
